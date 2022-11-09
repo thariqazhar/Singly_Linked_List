@@ -76,5 +76,23 @@ namespace single_linked_list
                 START = START.next;
             return true;
         }
+
+        /*Method untuk menge-check apakah node yang dimaksud ada didalam list atau tidak*/
+        public bool Search(int nim,ref Node previous, ref Node current)
+        {
+            previous = START;
+            current = START;
+
+            while ((current != null) && (nim != current.noMhs))
+            {
+                previous = current;
+                current = current.next;
+            }
+
+            if (current == null)
+                return(false);
+            else
+                return(true);
+        }
     }
 }
